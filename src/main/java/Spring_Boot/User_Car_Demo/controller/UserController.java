@@ -21,8 +21,6 @@ public class UserController {
 
     @PostMapping(path = "/create-user")
     ResponseEntity<UserResponse> createUser(@RequestBody UserRequest userRequest){
-        userService.saveUser(userRequest);
-
         return new ResponseEntity<>(userService.saveUser(userRequest), HttpStatus.CREATED);
     }
     @GetMapping("/{userId}")
